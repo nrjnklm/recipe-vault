@@ -5,7 +5,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    api.get("/recipes")
+    api.get("/api/recipes")
       .then(res => {
         console.log(res.data);
         setRecipes(res.data);
