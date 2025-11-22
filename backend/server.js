@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const authRouter = require("./routes/auth");
+app.use("/api/auth", authRouter);
+
+
 // connect to MongoDB
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/recipevault';
 mongoose.connect(MONGO_URI)
